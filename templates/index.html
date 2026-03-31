@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Your to-do 
+        </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='todo.css') }}">
+    </head>
+    <body>
+        <h1>
+            Welcome User!!😛
+        </h1>
+        <h3>
+            What are your todays Schedules🗒️? 
+        </h3>
+        <hr>
+        <br>
+        <div id="box">
+        <br>
+
+        <a href="{{url_for ('view_task')}}">
+            
+            <p id="view">Let's see what are your todays pending tasks.🧐</p>
+            
+        </a>
+        <a href="{{url_for ('add_task')}}">
+            
+            <p id="add">Note down todays Scheduled Task🗒️.</p>
+            
+        </a>
+        <a href="{{url_for ('del_task')}}">
+           
+            <p id="del">Wrong task added🫣, just delete it.</p>
+            
+        </a>
+        </div>
+
+    </body>
+</html>
