@@ -37,13 +37,10 @@
         <p>You can add your task..</p>
         <hr>
 
-        <form method="post">
+        <form method="POST" action="{{ url_for('add_task') }}">
             <label>Note Task:</label>
-            <input type="text" name="task" placeholder="Enter task">
+            <input type="text" name="task" placeholder="Enter task" required>
             <button type="submit">Add</button>
-            <br>
-            <br>
-
         </form>
     </body>
 </html>
