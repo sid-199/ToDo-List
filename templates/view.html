@@ -1,13 +1,19 @@
-<!DOCTYPE html>
 <html>
-    <body>
-        <h1>Your Tasks</h1>
+<body>
 
-    <ul>
-        {% for task in tasks %}
-            <li>{{ task[1] }}</li>
-        {% endfor %}
-    </ul>
-    </body>
+<h1>Your Tasks</h1>
 
+<ul>
+    {% for task in tasks %}
+        <li>
+            {{ task[1] }}
+            
+            <a href="{{ url_for('delete_task', id=task[0]) }}">
+                <button>Delete</button>
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
 </html>

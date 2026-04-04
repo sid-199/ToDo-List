@@ -36,9 +36,17 @@ def view_task():
 
     return render_template('view.html', tasks=tasks)
 
-@app.route('/delete')
-def del_task():
-    return "del working properly"
+@app.route('/delete/<int:id>')
+def delete_task(id):
+    conn = sqlite3.connect('tasks.db')
+    cur = conn.cursor()
+
+    cur.execute("DELETE FROM tasks WHERE id = ?", (id,))
+
+    conn.commit()
+    conn.close()
+
+    return redirect(url_for('view_task'))
 
 def init_db():
     conn = sqlite3.connect('tasks.db')   # create DB file
