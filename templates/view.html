@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html>
 <body>
-
+<link rel="stylesheet" href="{{url_for('static', filename='view.css')}}">
 <h1>Your Tasks</h1>
 
-<ul>
+<ol>
     {% for task in tasks %}
         <li>
             {{ task[1] }}
@@ -13,7 +14,7 @@
             </a>
         </li>
     {% endfor %}
-</ul>
+</0l>
 
 </body>
 </html>
